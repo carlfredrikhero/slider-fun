@@ -13,7 +13,7 @@ p {
 
 .slider {
     position: relative;
-    transition: all .5s ease-out;
+    transition: all .4s; /* closing */
     overflow-y: hidden;
     height: 0;
     padding-bottom: 20px;
@@ -21,7 +21,7 @@ p {
 
 .slider.open{
     height: auto;
-    transition: all 1s ease-in;
+    transition: all .5s; /* opening */
 }
 
 .slider *:not(.handle) {
