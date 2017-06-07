@@ -5,9 +5,10 @@
  * messages[1] = Hide
  */
 const sliderFactory = messages => el => {
-    const link = document.createElement('a'),
+    const link = el.querySelector('a.handle') || document.createElement('a')
+    if (!!link.dataset.listener) return
     // configuration of the observer:
-    config = { attributes: true, attributeFilter: ['class'] },
+    const config = { attributes: true, attributeFilter: ['class'] },
     isOpen = _ => el.classList.contains('open') ? 1 : 0,
     toggle = _ => el.classList.toggle('open'),
     height = _ => {
@@ -25,7 +26,9 @@ const sliderFactory = messages => el => {
 
     link.textContent = messages[isOpen()]
     link.classList.add('handle')
+
     link.addEventListener('click', toggle)
+    link.dataset.listener = true
 
     el.appendChild(link)
 
@@ -33,5 +36,7 @@ const sliderFactory = messages => el => {
 }
 
 const slider = sliderFactory(['Visa', 'Göm'])
+
+Array.from(document.querySelectorAll('.slider')).map(slider)
 
 Array.from(document.querySelectorAll('.slider')).map(slider)
