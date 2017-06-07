@@ -13,16 +13,24 @@ p {
 
 .slider {
     position: relative;
-    transition: all 1s;
+    transition: all .5s ease-out;
     overflow-y: hidden;
     height: 0;
-    padding: 10px;
     padding-bottom: 20px;
-    background: green;
 }
 
 .slider.open{
     height: auto;
+    transition: all 1s ease-in;
+}
+
+.slider *:not(.handle) {
+    opacity: 0;
+    transition: all .75s;
+}
+
+.slider.open *:not(.handle) {
+    opacity: 1;
 }
 
 .handle {
@@ -31,7 +39,7 @@ p {
     bottom: 0;
     background: #ddd;
     display: block;
-    width: calc(100% - 20px);
+    width: calc(100% - 0px);
     text-align: center;
 }
 

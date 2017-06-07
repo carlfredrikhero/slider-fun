@@ -38,5 +38,3 @@ const sliderFactory = messages => el => {
 const slider = sliderFactory(['Visa', 'Göm'])
 
 Array.from(document.querySelectorAll('.slider')).map(slider)
-
-Array.from(document.querySelectorAll('.slider')).map(slider)
