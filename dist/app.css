@@ -1,0 +1,38 @@
+body, p {
+    margin: 0;
+    padding:0;
+    font-size: 100%;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+#main {
+}
+
+.slider {
+    position: relative;
+    transition: all 1s;
+    overflow-y: hidden;
+    height: 0;
+    padding: 10px;
+    padding-bottom: 20px;
+    background: green;
+}
+
+.slider.open{
+    height: auto;
+}
+
+.handle {
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    background: #ddd;
+    display: block;
+    width: calc(100% - 20px);
+    text-align: center;
+}
+
+fieldset:last-child { margin-bottom: 10px; }
